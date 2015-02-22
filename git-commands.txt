@@ -1,4 +1,4 @@
-git init
+1. We have to switch our project's root folder and use the "git init" command to start versioning
 
 
 commit

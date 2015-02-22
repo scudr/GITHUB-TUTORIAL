@@ -1,0 +1,80 @@
+git init
+
+
+commit
+$ git add -A
+$ git commit -m "Initial commit"
+
+
+
+(LF will be replaced by CRLF in git - What is that and is it important? [duplicate]
+
+If you want, you can deactivate this in your git core config
+
+git config core.autocrlf true )
+
+
+
+clone
+git clone https://github.com/gittower/git-crash-course.git
+
+git status // pa ver que cambios se han hecho
+
+commit
+$ git add new-page.html index.html css/*
+
+$ git commit -m "Implement the new login box"
+
+$ git log
+commit history
+You can then go to the next page with the SPACE key and quit with the "q" key.
+
+Apart from this metadata, Git also allows you to display the detailed changes that happened in each commit. Use the "-p" flag with the "git log" command to add this kind of information:
+
+$ git branch contact-form
+to create a branch
+$ git branch -v a ist of all branches
+
+VLet's stash away these local changes so we have a clean working copy before starting to work on our new feature:
+
+$ git status
+
+to see a list of stash 
+$ git stash list
+
+$ git stash
+
+When you're ready to restore a saved Stash, you have two options:
+
+(a) Calling "git stash pop" will apply the newest Stash and clear it from your Stash clipboard.
+(b) Calling "git stash apply <stashname>" will also apply the specified Stash, but it will remain saved. You can delete it later via "git stash drop <stashname>".
+
+When to Stash
+
+Stashing helps you get a clean working copy. While this can be helpful in many situations, it's strongly recommended...
+
+...before checking out a different branch.
+...before pulling remote changes.
+...before merging or rebasing a branch.
+
+We switch to (checkout)our newly created branch
+$ git checkout contact-form
+
+git status
+to add a file
+
+Let's prove this by creating a new file called "contact.html" and committing it:
+
+$ git add contact.html
+$ git commit -m "Add new contact form page"
+$ git log
+
+
+to merge
+In Git, performing a merge is easy as pie. It requires just two steps:
+
+(1) Check out the branch that should receive the changes.
+(2) Call the "git merge" command with the name of the branch that contains the desired changes.
+
+$ git checkout master
+$ git merge contact-form

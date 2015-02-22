@@ -1,76 +1,71 @@
+Im a beginner at using Git und Github. Im making my list of steps in order to get a local and remote repository working
+for my projects by using Git und Github.
+
 1. We have to switch our project's root folder and use the "git init" command to start versioning
 
-
-commit
+2. Then we make our first commit
 $ git add -A
 $ git commit -m "Initial commit"
 
-
-
-(LF will be replaced by CRLF in git - What is that and is it important? [duplicate]
-
-If you want, you can deactivate this in your git core config
-
-git config core.autocrlf true )
-
-
-
-clone
+3. We can also clone a remote project's folder to our computer by using "git clone" command
 git clone https://github.com/gittower/git-crash-course.git
 
-git status // pa ver que cambios se han hecho
+4. we can get an overview of What we've changed since our last commit
+git status 
 
-commit
+5. It's time to craft a commit: We specify for example the pending files we added to our project 
+One way, we specify the file's name and if we have more than one file with same extension and we want commit
+those files we write css/* if our files have .css extension
 $ git add new-page.html index.html css/*
 
+
+6. The "git commit" wraps up our changes and we have to enter a comment which describes what we've already done
 $ git commit -m "Implement the new login box"
 
+7. We use the "git log" command to display our project's commit history
 $ git log
-commit history
-You can then go to the next page with the SPACE key and quit with the "q" key.
 
-Apart from this metadata, Git also allows you to display the detailed changes that happened in each commit. Use the "-p" flag with the "git log" command to add this kind of information:
+8.You can then go to the next page with the SPACE key and quit with the "q" key.
 
+9.Git also allows you to display the detailed changes that happened in each commit.
+We have to write the "-p" flag with the "git log" command to add this kind of information:
+
+
+Now It's time to create our first branch
+
+10. We do this by writing the following command:
+git branch [the name of our branch]
+ Example:
 $ git branch contact-form
-to create a branch
-$ git branch -v a ist of all branches
 
-VLet's stash away these local changes so we have a clean working copy before starting to work on our new feature:
+11. If we want to list all branches
+$ git branch -v 
 
-$ git status
 
-to see a list of stash 
-$ git stash list
 
+12.Let's stash away these local changes so we have a clean working copy before starting to work on our new feature:
 $ git stash
 
-When you're ready to restore a saved Stash, you have two options:
 
-(a) Calling "git stash pop" will apply the newest Stash and clear it from your Stash clipboard.
-(b) Calling "git stash apply <stashname>" will also apply the specified Stash, but it will remain saved. You can delete it later via "git stash drop <stashname>".
+13. If we wanna see a list of stash 
+$ git stash list
 
-When to Stash
 
-Stashing helps you get a clean working copy. While this can be helpful in many situations, it's strongly recommended...
+14. If we want to checkout our newly created branch
+$ git checkout [name of the newly created branch]
 
-...before checking out a different branch.
-...before pulling remote changes.
-...before merging or rebasing a branch.
 
-We switch to (checkout)our newly created branch
-$ git checkout contact-form
 
-git status
-to add a file
 
-Let's prove this by creating a new file called "contact.html" and committing it:
+Examples & Others
+1. Adding a new file
+-Let's prove this by creating a new file called "contact.html" and committing it:
 
 $ git add contact.html
 $ git commit -m "Add new contact form page"
 $ git log
 
-
-to merge
+2. Merging
 In Git, performing a merge is easy as pie. It requires just two steps:
 
 (1) Check out the branch that should receive the changes.
@@ -78,3 +73,16 @@ In Git, performing a merge is easy as pie. It requires just two steps:
 
 $ git checkout master
 $ git merge contact-form
+
+3. Push changes to our remote repository
+1. we establish a connection to our remote repository
+git remote add [alias][url]
+example:
+git remote add Tutorial-Github git@github.com:username/reponame.git
+
+2. git push Tutorial-Github master
+
+3. After our first push, we can simply type:
+git push
+
+

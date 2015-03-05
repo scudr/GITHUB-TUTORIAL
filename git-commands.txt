@@ -85,4 +85,12 @@ git remote add Tutorial-Github git@github.com:username/reponame.git
 3. After our first push, we can simply type:
 git push
 
+4. If we want to get the short commit has
+git log --abbrev-commit
+
+5. If we want to revert our current version to a specific commit
+git reset --hard <old-commit-id>
+
+6. if we want to see what we have changed 
+git diff yourfile
 

@@ -94,3 +94,5 @@ git reset --hard <old-commit-id>
 6. if we want to see what we have changed 
 git diff yourfile
 
+
+7. Line to be erased.

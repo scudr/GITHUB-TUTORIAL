@@ -1,0 +1,3 @@
+What does "thread safe" mean?
+"A piece of code is thread-safe if it functions correctly during simultaneous 
+execution by multiple threads."

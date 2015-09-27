@@ -23,3 +23,15 @@ festellen/festgestellt = detectar algo
 eine Krankheit feststellen = detectar una enfermedad
 das Rad = rueda
 rollen /gerollt = rodar mit sein
+die Chirurgie = cirugia
+Die Hierarchie = jer'arquia
+Die Einstufungstest = prueba de nivelacion
+nieseln /genieselt = lloviznar
+Der Pfeil = la flecha
+Die Statistik = estadistica
+Prioritäten setzen / priorisieren/priorisiert = priorizar
+absurd/sinnlos = absurdo
+ungünstig = adverso, desventajoso, inconveniente
+einigermaßen = hasta cierto punto
+
+

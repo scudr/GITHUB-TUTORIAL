@@ -1,1 +1,15 @@
-JAva tutorial
+Java Arrays
+
+1. If we want to convert an Array into a List and it has a fixed-size :
+
+
+public static void main(String args[]){
+
+String a[] = new String[]{"Carlos","Matias"}
+
+List<String> list = Arrays.asList(a);
+
+System.out.println(list);
+
+
+}

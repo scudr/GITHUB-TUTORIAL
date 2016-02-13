@@ -58,6 +58,7 @@ $ git checkout [name of the newly created branch]
 
 
 Examples & Others
+After cloning a git repository: First commit local changes and then send them to the repository
 1. Adding a new file
 -Let's prove this by creating a new file called "contact.html" and committing it:
 

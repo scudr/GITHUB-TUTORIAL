@@ -1,0 +1,166 @@
+http://ryanstutorials.net/linuxtutorial/
+
+
+http://linuxcommand.org/lts0040.php
+ls:
+ls -la ..	
+List all files (even ones with names beginning with a period character, which are normally hidden) in the parent of the working directory in long format
+
+Structure
+command -options arguments
+
+Use of less:
+less text_file
+Example:
+less texto.txt
+
+Use of file
+file name_of_file.extension
+
+Summary
+file
+obtain information about what type of file a file or directory is.
+ls -a
+List the contents of a directory, including hidden files.
+
+Everything is a file under Linux
+Even directories.
+Linux is an extensionless system
+Files can have any extension they like or none at all.
+Linux is case sensitive
+Beware of silly typos.
+
+/Search in a Manual page
+Example
+man ls
+
+While you are in a particular manual page u would like to search, then write '/' followed
+by the term u would like to search for and hit 'enter
+
+
+Summary
+man <command>
+Look up the manual page for a particular command.
+man -k <search term>
+Do a keyword search for all manual pages containing the given search term.
+/<term>
+Within a manual page, perform a search for 'term'
+n
+After performing a search within a manual page, select the next found item.
+
+The man pages are your friend.
+Instead of trying to remember everything, instead remember you can easily look stuff up in the man pages.'
+
+
+File Manipulation:
+The first one is -p which tells mkdir to make parent directories as needed (demonstration of what that actually means below). 
+mkdir -p linuxtutorialwork/foo/bar
+The second one is -v which makes mkdir tell us what it is doing (as you saw in the example above, it normally does not).
+mkdir -pv linuxtutorialwork/foo/bar
+mkdir: created directory 'linuxtutorialwork/foo'
+mkdir: created directory 'linuxtutorialwork/foo/bar'
+
+To remove directories:
+rmdir[options] <directory>
+
+
+touch:
+touch example.txt
+touch example2.docx
+
+touch is actually a command we may use to modify the access and modification times on a file (normally not needed but sometimes when you're testing a system that relies on file access or modification times it can be useful).
+
+cp : copy files from one directory to another
+cp [options] <source> <destination>
+Example:
+We have  a foo directory, which has hi.txt and we want to copy to the directory foo2 which is contained in the same directory as foo
+linuxtutorial
+	foo
+	  hi.txt
+	foo2
+
+cp hi.txt ../foo2
+
+Note that both the source and destination are paths. This means we may refer to them using both absolute and relative paths. Here are a few examples:
+
+cp /home/ryan/linuxtutorialwork/example2 example3
+cp example2 ../../backups
+cp ecample2 ../../backups/example4
+cp /home/ryan/linuxtutorialwork/example2 /otherdir/foo/example5
+
+we have a foo directory with a example2 as a subdirectory and we want to copy it in the directory foo2, which is contained in the same 
+directory as foo
+cp -r example3 ../foo2
+'r': it stands for recursive
+
+Moving a file or directory:
+mv [options] <source> <destination>
+Example:
+mv hi.txt ../foo2
+
+To remove a file:
+rm [options] <file>
+rm hi.txt
+
+To remove a directory which is not empty
+rm -r directory
+
+
+//Wildcards
+Search for all .txt files in the linuxtutorialwork directory
+ls /home/ryan/linuxtutorialwork/*.txt
+
+Search for all files starting with b
+ls /home/ryan/linuxtutorialwork/b*
+
+Search for all directories or files starting wich second letter is an "s" , the first letter is represented for the ?, it means whatever letter
+ls ?s*
+ls *.???? a file which extension consists of 3 letters
+
+
+We search for files whose name either begins with a 's' or 'v'
+ls [sv]*
+
+With ranges we may also include a set by using a hyphen. So for example if we wanted to find every file whose name includes a digit in it we could do the following:
+ls *[0-9]*
+
+We may also reverse a range using the caret ( ^ ) which means look for any character which is not one of the following.
+ls [^a-k]*
+
+It shows the file type of every file in a directory
+file *
+
+linuxtutorial
+    foo
+	aa.docx
+	bb.docx
+	cc.txt
+    foo2
+
+Move all files of type.docx in foo to foo2(we are in the foo directory)
+mv *.??? ../foo2 
+
+
+//permissions
+chmod has permission arguments that are made up of 3 components
+
+Who are we changing the permission for? [ugoa] - user (or owner), group, others, all
+Are we granting or revoking the permission - indicated with either a plus ( + ) or minus ( - )
+Which permission are we setting? - read ( r ), write ( w ) or execute ( x )
+
+
+To see permissions for a user
+ls -l [path] or ls -l (show all)
+
+//Use of chmod
+chmod u-w 'path'   : Path is the same of the name of the file
+With ls -l : We can see the permissions
+chmod u-w 'path': writing is not possible for the user
+chmod u+w 'path' : writing is again possible for the user
+chmod u-r 'path': reading is not possible for the user
+
+Stuff learnt
+chmod
+Change permissions on a file or directory.
+ls -ld
+View the permissions for a specific directory.

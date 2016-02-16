@@ -1,5 +1,4 @@
-http://ryanstutorials.net/linuxtutorial/
-
+v
 
 http://linuxcommand.org/lts0040.php
 ls:
@@ -164,3 +163,63 @@ chmod
 Change permissions on a file or directory.
 ls -ld
 View the permissions for a specific directory.
+
+//Filters:
+cat mysampledata.txt = it shows the data contained in the file
+
+head [-number of lines to print][path] = by default head prints the 10 first lines
+head -3 mysampledata.txt //It prints the first 3 lines
+
+tail //prints the last lines. by default it prints the last 10 lines
+tail [-number of lines to print] [path]
+tail mysampledata.txt
+tail -3 mysampledata.txt//it prints the last 3 lines
+
+sort: //it sorts alphabetically 
+sort [-options] [path]
+sort mysampledata.txt
+
+//nl stands for number of lines and it does just that
+nl [-options] [path]
+nl mysampledata.txt
+
+nl -s '. ' -w 10 mysampledata.txt
+// -s indicated what it should be printed after the number while
+//the second one -w specifies how much padding to put before the numbers.
+
+//wc stands for word count, characters and lines
+wc [-options] [path] //by default it will give a count of all 3
+
+wc -l my sampledata.txt //it prints only lines
+
+wc -w my sampledata.txt // it prints only words
+
+wc -m my sampledata.txt// it prints only characters
+
+Cut [-options] [path] // to retrieve only some fields
+cut -f 1 -d ' ' mysampledata.txt
+the -f indicates the field or fields we would like (that is to say the column)
+-d indicates the separator character in this case a space 
+
+cut -f 1,2 -d ' ' mysampledata.txt //column 1 and 2
+
+sed stands for stream editor. it allows to do a search and replace on our data.
+sed <expression> [path]
+A basic expresion has the following format:
+s/search/replace g
+sed 's/oranges/bananas/g' mysampledata.txt
+s : it substitutes
+search: what we are looking for
+replace: the word we replace
+g: it means global it replaces all the coincidences in the documents. If it is omitted, then it replace only
+the first instance
+
+Note: sed does not replace word but strings of characters, try the follwing
+sed 's/es/bananas/g' mysampledata.txt
+
+uniq [options] [path]
+//it removes duplicates lines from the data
+
+tac [path] // it does the contrary of cat . it prints the last line first, through to the first line.
+
+awk /diff

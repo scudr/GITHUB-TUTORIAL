@@ -1,5 +1,4 @@
-v
-
+Prueba
 http://linuxcommand.org/lts0040.php
 ls:
 ls -la ..	
